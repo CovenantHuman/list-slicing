@@ -249,5 +249,10 @@ def custom_equality(some_list, another_list):
         False
 
     """
-
-    return None
+    i = 0
+    for item in some_list:
+        if item != another_list[i]:
+            return False
+        i += 1
+        
+    return True
