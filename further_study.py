@@ -193,12 +193,6 @@ def custom_reverse(input_list):
 
     """
 
-    # new_list = []
-    # for item in input_list:
-    #     new_list[0:0] =[item]
-    # print(new_list)
-    # input_list = new_list    
-
     length = 0
     for item in input_list:
         length += 1
@@ -208,21 +202,12 @@ def custom_reverse(input_list):
         if i < length-1:
             i += 1
             input_list[-i:-i] = [item]
-            # print(f"THIS IS THE ITEM: {item}")
-            # print(f"THIS IS THE LIST BEFORE DELETION: {input_list}")
-            # del input_list[0]
-            # print(f"THIS IS THE LIST AFTER DELETION: {input_list}")
         else:
             break
 
     input_list[-length:-length] = [input_list[-1]]
     del input_list[-1]
     del input_list[:length-1]
-
-    # print(f"FINAL LIST: {input_list}")
-
-# multiples = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
-# custom_reverse(multiples)
 
 
 def custom_contains(input_list, value):
@@ -242,7 +227,11 @@ def custom_contains(input_list, value):
 
     """
 
-    return None
+    for item in input_list:
+        if item == value:
+            return True
+
+    return False
 
 
 def custom_equality(some_list, another_list):
