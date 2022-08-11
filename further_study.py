@@ -1,5 +1,6 @@
 """Custom implementations of several standard Python list methods."""
 
+from re import I
 from list_operations import *
 
 
@@ -149,8 +150,11 @@ def custom_index(input_list, value):
         1
 
     """
-
-    return 0
+    i = 0
+    for item in input_list:
+        if item == value:
+            return i
+        i += 1
 
 
 def custom_count(input_list, value):
